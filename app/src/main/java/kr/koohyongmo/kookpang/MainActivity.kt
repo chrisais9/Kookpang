@@ -1,11 +1,25 @@
 package kr.koohyongmo.kookpang
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import androidx.fragment.app.Fragment
+import kr.koohyongmo.kookpang.common.ui.base.BaseActivity
+import kr.koohyongmo.kookpang.home.ui.ProductListFragment
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+class MainActivity : BaseActivity() {
+    override val layoutResourceID: Int
+        get() = R.layout.activity_main
+    override val layoutToolbarID: Int
+        get() = R.id.toolbar
+
+    override val enableBackButtonOnToolbar: Boolean = false
+
+    override fun initLayoutAttributes() {
+        setCurrentFragmentTab(ProductListFragment())
+    }
+
+    private fun setCurrentFragmentTab(fragment: Fragment) {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.frame_fragment_container, fragment)
+            .commitAllowingStateLoss()
     }
 }
