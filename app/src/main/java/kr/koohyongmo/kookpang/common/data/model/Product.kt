@@ -1,10 +1,13 @@
 package kr.koohyongmo.kookpang.common.data.model
 
+import io.realm.RealmObject
+import io.realm.annotations.PrimaryKey
+
 /**
  * Created by KooHyongMo on 2020/10/11
  */
-data class Product(
-    val preview: String,
-    val name: String,
-    val price: Int
-)
+open class Product : RealmObject() {
+    var preview: String = ""
+    var name: String = ""
+    var price: String = ""
+}

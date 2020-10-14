@@ -1,5 +1,6 @@
 package kr.koohyongmo.kookpang
 
+import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_main.*

@@ -1,4 +1,4 @@
-package kr.koohyongmo.kookpang.store.ui.viewmodel
+package kr.koohyongmo.kookpang.shoppinglist.viewmodel
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
@@ -6,10 +6,10 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 
 /**
- * Created by KooHyongMo on 2020/10/11
+ * Created by KooHyongMo on 2020/10/15
  */
 
-class ProductViewModel(
+class ProductShoppingListViewModel(
     val preview: String,
     val name: String,
     val price: String

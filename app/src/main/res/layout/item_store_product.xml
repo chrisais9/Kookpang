@@ -6,13 +6,14 @@
 
         <variable
             name="listContent"
-            type="kr.koohyongmo.kookpang.store.ui.viewmodel.ProductViewModel" />
+            type="kr.koohyongmo.kookpang.store.viewmodel.ProductStoreViewModel" />
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:onClick="@{listContent::onSaveToShoppingList}">
 
         <ImageView
             android:id="@+id/iv_preview"
