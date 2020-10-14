@@ -6,7 +6,7 @@
 
         <variable
             name="listContent"
-            type="kr.koohyongmo.kookpang.home.ui.viewmodel.ProductViewModel" />
+            type="kr.koohyongmo.kookpang.store.ui.viewmodel.ProductViewModel" />
 
     </data>
 

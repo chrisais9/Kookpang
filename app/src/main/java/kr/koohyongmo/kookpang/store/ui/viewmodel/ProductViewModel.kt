@@ -1,4 +1,4 @@
-package kr.koohyongmo.kookpang.home.ui.viewmodel
+package kr.koohyongmo.kookpang.store.ui.viewmodel
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
@@ -16,7 +16,6 @@ class ProductViewModel(
 ) {
 
     companion object {
-
         @JvmStatic
         @BindingAdapter("loadImage")
         fun loadImage(view: ImageView, url: String?) {
