@@ -13,7 +13,12 @@ class MainActivity : BaseActivity() {
 
     override val enableBackButtonOnToolbar: Boolean = false
 
-    val modeList = arrayListOf("스토어", "장바구니")
+    private val modeList by lazy {
+        arrayListOf(
+            getString(R.string.tab_home),
+            getString(R.string.tab_shopping_list)
+        )
+    }
 
     override fun initLayoutAttributes() {
         initializeTab()

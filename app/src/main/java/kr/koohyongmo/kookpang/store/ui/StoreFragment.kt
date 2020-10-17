@@ -99,6 +99,7 @@ class StoreFragment
         if(product == null) {
             btn_buy.visibility = View.GONE
             btn_shopping_list.visibility = View.GONE
+            selectedProduct = null
         } else if (selectedProduct == null) {
             btn_buy.visibility = View.VISIBLE
             btn_shopping_list.visibility = View.VISIBLE
