@@ -3,21 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="listContent"
             type="kr.koohyongmo.kookpang.store.viewmodel.ProductStoreViewModel" />
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="@{listContent::onSaveToShoppingList}">
+        android:background="?android:attr/selectableItemBackground">
 
         <ImageView
             android:id="@+id/iv_preview"
-            app:loadImage="@{listContent.preview}"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:layout_marginStart="16dp"
@@ -25,7 +22,8 @@
             android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:loadImage="@{listContent.preview}" />
 
         <TextView
             android:id="@+id/tv_title"
