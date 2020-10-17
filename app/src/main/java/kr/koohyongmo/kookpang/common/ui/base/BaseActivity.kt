@@ -4,8 +4,6 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.disposables.Disposable
 
 /**
  * Created by KooHyongMo on 2020/10/11
@@ -28,8 +26,6 @@ abstract class BaseActivity
 
     lateinit var toolbar: Toolbar
     open val enableBackButtonOnToolbar = true
-
-    private val compositeDisposable = CompositeDisposable()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,16 +57,6 @@ abstract class BaseActivity
             android.R.id.home -> finish()
         }
         return super.onOptionsItemSelected(item)
-    }
-
-    fun addToDisposable(disposable: Disposable) {
-        compositeDisposable.add(disposable)
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        if(!compositeDisposable.isDisposed)
-            compositeDisposable.dispose()
     }
 
 

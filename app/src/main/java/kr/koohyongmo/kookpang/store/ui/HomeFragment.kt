@@ -17,8 +17,10 @@ import kr.koohyongmo.kookpang.purchase.ui.PurchaseActivity
 import kr.koohyongmo.kookpang.store.viewmodel.ProductStoreViewModel
 
 /**
- * 홈화면 Fragment
+ * 홈 화면 Fragment
  * 상품 리스트가 있으며, 상품 장바구니 추가 및 구매를 진행 할 수 있음
+ *
+ * Created by KooHyongMo on 2020/10/11
  */
 
 class HomeFragment

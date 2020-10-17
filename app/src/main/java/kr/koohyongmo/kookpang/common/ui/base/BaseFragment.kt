@@ -7,13 +7,11 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
-import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.disposables.Disposable
 
 /**
  * Created by KooHyongMo on 2020/10/11
  */
-abstract class BaseFragment : Fragment()  {
+abstract class BaseFragment : Fragment() {
     /**
      * setContentView로 호출할 Layout의 리소스 ID
      * ex) R.layout.activity_main
@@ -26,11 +24,6 @@ abstract class BaseFragment : Fragment()  {
      */
     protected abstract val layoutToolbarID: Int
 
-    /** View 가 한번 이상 그려지면 false */
-    protected var isFirstLoad: Boolean = true
-
-    val compositeDisposable = CompositeDisposable()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(layoutToolbarID != 0)
@@ -42,7 +35,7 @@ abstract class BaseFragment : Fragment()  {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(layoutResourceID, container, false).apply {
-            if(layoutToolbarID != 0) {
+            if (layoutToolbarID != 0) {
                 (requireActivity() as AppCompatActivity).setSupportActionBar(
                     findViewById<Toolbar>(layoutToolbarID).apply {
                         title = ""
@@ -54,7 +47,6 @@ abstract class BaseFragment : Fragment()  {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initLayoutAttributes()
-        isFirstLoad = false
     }
 
     /**
@@ -63,16 +55,5 @@ abstract class BaseFragment : Fragment()  {
      * ex) 리사이클러뷰, 툴바, 드로어뷰..
      */
     abstract fun initLayoutAttributes()
-
-
-    fun addToDisposable(disposable: Disposable) {
-        compositeDisposable.add(disposable)
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        if(!compositeDisposable.isDisposed)
-            compositeDisposable.dispose()
-    }
 
 }
