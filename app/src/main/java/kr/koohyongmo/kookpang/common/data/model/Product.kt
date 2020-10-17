@@ -1,7 +1,6 @@
 package kr.koohyongmo.kookpang.common.data.model
 
 import io.realm.RealmObject
-import io.realm.annotations.PrimaryKey
 
 /**
  * Created by KooHyongMo on 2020/10/11

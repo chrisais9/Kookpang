@@ -1,5 +1,6 @@
 package kr.koohyongmo.kookpang.store.ui
 
+import android.content.Intent
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.github.nitrico.lastadapter.LastAdapter
@@ -12,13 +13,15 @@ import kr.koohyongmo.kookpang.R
 import kr.koohyongmo.kookpang.common.data.model.Product
 import kr.koohyongmo.kookpang.common.ui.base.BaseFragment
 import kr.koohyongmo.kookpang.databinding.ItemStoreProductBinding
+import kr.koohyongmo.kookpang.purchase.ui.PurchaseActivity
 import kr.koohyongmo.kookpang.store.viewmodel.ProductStoreViewModel
 
 /**
- * Created by KooHyongMo on 2020/10/11
+ * 홈화면 Fragment
+ * 상품 리스트가 있으며, 상품 장바구니 추가 및 구매를 진행 할 수 있음
  */
 
-class StoreFragment
+class HomeFragment
     : BaseFragment() {
 
     override val layoutResourceID: Int
@@ -83,7 +86,11 @@ class StoreFragment
                 onSaveToShoppingList(product)
             }
         }
-
+        btn_buy.setOnClickListener {
+            selectedProduct?.let { product ->
+                onPurchaseProduct(product)
+            }
+        }
 
     }
 
@@ -138,5 +145,13 @@ class StoreFragment
         realm.close()
         // 장바구니로 뷰 포커스 이동
         (activity as MainActivity).vp_mode.setCurrentItem(1, true)
+    }
+
+    private fun onPurchaseProduct(product: ProductStoreViewModel) {
+        startActivity(
+            Intent(requireContext(), PurchaseActivity::class.java)
+                .putExtra("name", arrayListOf(product.name))
+                .putExtra("price", arrayListOf(product.price))
+        )
     }
 }
