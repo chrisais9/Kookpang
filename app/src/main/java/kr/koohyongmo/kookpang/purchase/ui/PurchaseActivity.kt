@@ -51,7 +51,7 @@ class PurchaseActivity
     private fun initProductListAndSum() {
         var productInfoString = ""
         var productPriceSum = 0
-        productNameList.forEachIndexed { index, name ->
+        productNameList.forEachIndexed { index, _ ->
             productInfoString += "${index + 1}. ${productNameList[index]} ${productPriceList[index]}\n"
             productPriceSum += productPriceList[index].filter { it.isDigit() }.toInt()
         }

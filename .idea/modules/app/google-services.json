@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "946457248702",
+    "firebase_url": "https://kookpang-f77c4.firebaseio.com",
+    "project_id": "kookpang-f77c4",
+    "storage_bucket": "kookpang-f77c4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:946457248702:android:3fd8193ca146d1e98f2fef",
+        "android_client_info": {
+          "package_name": "kr.koohyongmo.kookpang"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "946457248702-ab6bdf5vshbfj0175ubhf2rtrnafvatc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.koohyongmo.kookpang",
+            "certificate_hash": "f55dd49d768b28e4bac5d45379fad56ddc212a1f"
+          }
+        },
+        {
+          "client_id": "946457248702-8h93hg4bno48k3rqtntjf4km5blf692r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0mfvfiJsUiExKCnooIi-5oybc3rb8N88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "946457248702-8h93hg4bno48k3rqtntjf4km5blf692r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

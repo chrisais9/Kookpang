@@ -2,8 +2,14 @@ package kr.koohyongmo.kookpang.store.ui
 
 import android.content.Intent
 import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.github.nitrico.lastadapter.LastAdapter
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import io.realm.Realm
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_store.*
@@ -52,22 +58,25 @@ class HomeFragment
     }
 
     private fun initProductItems() {
-        productListData.add(
-            ProductStoreViewModel(
-                "https://img.danawa.com/prod_img/500000/890/719/img/2719890_1.jpg?shrink=500:500&_v=20171122173134",
-                "퐁퐁 세제",
-                "₩9,800"
-            )
-        )
+        Firebase.database.reference
+            .addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    productListData.clear()
+                    val products = snapshot.child("products").children.map {
+                        it.getValue(ProductStoreViewModel::class.java)!!
+                    }
+                    productListData.addAll(products)
+                    productListAdapter.notifyDataSetChanged()
+                }
 
-        productListData.add(
-            ProductStoreViewModel(
-                "https://imgc.1300k.com/aaaaaib/goods/215024/96/215024967618.jpg?3",
-                "에어팟",
-                "₩219,000"
-            )
-        )
-        productListAdapter.notifyDataSetChanged()
+                override fun onCancelled(error: DatabaseError) {
+                    Toast.makeText(
+                        requireContext(),
+                        "인터넷 연결을 확인하세요.",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            })
     }
 
     private fun initRecyclerView() {
@@ -105,7 +114,7 @@ class HomeFragment
      * 구매, 호출 로직을 위해 선택된 아이템은 [selectedProduct] 에 저장된다
      */
     private fun onClickProduct(product: ProductStoreViewModel?) {
-        if(product == null) {
+        if (product == null) {
             btn_buy.visibility = View.GONE
             btn_shopping_list.visibility = View.GONE
             selectedProduct = null

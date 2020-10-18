@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "781600946258",
+    "firebase_url": "https://kookpang-853e8.firebaseio.com",
+    "project_id": "kookpang-853e8",
+    "storage_bucket": "kookpang-853e8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781600946258:android:bd824bf0102781075c078b",
+        "android_client_info": {
+          "package_name": "kr.koohyongmo.kookpang"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "781600946258-7mbdqdsuq478504rgb5ujo0kg8pkogkb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6Q0h8C9wgcM5JXsyG52fxLpgsG8I7Si4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "781600946258-7mbdqdsuq478504rgb5ujo0kg8pkogkb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

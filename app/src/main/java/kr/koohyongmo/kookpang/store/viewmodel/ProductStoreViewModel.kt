@@ -15,6 +15,8 @@ class ProductStoreViewModel(
     val price: String
 ) {
 
+    constructor() :this("","","")
+
     companion object {
 
         @JvmStatic
