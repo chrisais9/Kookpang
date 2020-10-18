@@ -55,4 +55,4 @@
 ## 구현 내용
 
 첫번째 화면
-![images/first_none.png]()
+![](images/first_none.png)
