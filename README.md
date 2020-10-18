@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="images/logo_kookpang_w350.png" width="200"></a>
+  <img src="images/logo_kookpang_w350.png" width="400"></a>
   
 </h1>
 <h4 align="center">국민대 X Coupang</h4>
