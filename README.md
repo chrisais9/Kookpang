@@ -54,5 +54,10 @@
 
 ## 구현 내용
 
-첫번째 화면
-![](images/first_none)
+### 첫번째 화면
+1. 아무 상품도 선택하지 않았을때
+<br><br>
+<img src="images/first_none.png" width="400"></a>
+1. 상품을 선택했을때
+<br><br>
+<img src="images/first_select.png" width="400"></a>
