@@ -24,6 +24,9 @@ class MainActivity : BaseActivity() {
         initializeTab()
     }
 
+    /**
+     * 홈, 장바구니 탭 구성
+     */
     private fun initializeTab() {
         vp_mode.adapter = HomeModeViewPager(
             supportFragmentManager,

@@ -33,8 +33,8 @@ class ShoppingListFragment
     override val layoutToolbarID: Int
         get() = 0
 
-    private var productListData = arrayListOf<ProductShoppingListViewModel>()
-    private val productListAdapter = LastAdapter(productListData, BR.listContent)
+    private val productListData = arrayListOf<ProductShoppingListViewModel>()
+    private val productListAdapter by lazy { LastAdapter(productListData, BR.listContent) }
 
     private var selectedProduct = arrayListOf<ProductShoppingListViewModel>()
 
@@ -91,6 +91,12 @@ class ShoppingListFragment
             productListAdapter.notifyDataSetChanged()
         }
     }
+
+    /**
+     * 각 버튼의 역할 정의
+     * 홈으로 -> 홈 화면 이동
+     * 구매하기 -> 구매 엑티비티로 구매할 아이템 넘겨줌
+     */
 
     private fun initButtons() {
         btn_buy.setOnClickListener {

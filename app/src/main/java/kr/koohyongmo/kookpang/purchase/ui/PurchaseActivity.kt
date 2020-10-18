@@ -20,11 +20,11 @@ class PurchaseActivity
     override val layoutToolbarID: Int
         get() = R.id.toolbar
 
-    var productNameList = arrayListOf<String>()
-    var productPriceList = arrayListOf<String>()
+    private var productNameList = arrayListOf<String>()
+    private var productPriceList = arrayListOf<String>()
 
-    var isAddressEmpty = true
-    var isPhoneEmpty = true
+    private var isAddressEmpty = true
+    private var isPhoneEmpty = true
 
     override fun initLayoutAttributes() {
         productNameList.addAll(intent.getSerializableExtra("name") as ArrayList<String>)
@@ -45,7 +45,7 @@ class PurchaseActivity
      * """
      * 같이 만들어줌
      *
-     * 그리고 가격의 총합도 보여줌
+     * 그리고 가격의 총합도 업데이트함
      */
 
     private fun initProductListAndSum() {
@@ -64,6 +64,8 @@ class PurchaseActivity
      */
 
     private fun initUserInfo() {
+
+        // 주소 입력 필드
         et_address.addTextChangedListener {
             if (it?.isEmpty()!!) {
                 // 주소가 비어있으면 Edittext 밑줄 빨간색
@@ -76,6 +78,8 @@ class PurchaseActivity
             }
             setButtonAvailability()
         }
+
+        // 연락처 정보 입력 필드
         et_phone.addTextChangedListener {
             if (it.toString().matches("[0-9]{3}\\-?[0-9]{4}\\-?[0-9]{4}$".toRegex())) {
                 // 휴대폰 정보가 01012345678 같이 올바르면 Edittext 밑줄 초록색
