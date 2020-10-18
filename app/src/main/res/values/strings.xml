@@ -6,5 +6,6 @@
 
     <string name="btn_buy">구매하기</string>
     <string name="btn_shopping_list">장바구니</string>
+    <string name="btn_home">홈으로</string>
 
 </resources>

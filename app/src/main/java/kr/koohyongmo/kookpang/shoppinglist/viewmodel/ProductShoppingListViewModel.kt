@@ -12,7 +12,8 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 class ProductShoppingListViewModel(
     val preview: String,
     val name: String,
-    val price: String
+    val price: String,
+    var isChecked: Boolean
 ) {
 
     companion object {
