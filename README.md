@@ -54,15 +54,53 @@
 
 ## 구현 내용
 
-### 첫번째 화면(홈 화면)
+### 첫번째 화면(상품 선택 페이지)
 1. 아무 상품도 선택하지 않았을때
 <br><br>
-<img src="images/first_none.png" width="400"></a>
+<img src="images/first_none.png" width="400">
+
 1. 상품을 선택했을때(화면 아래에 버튼이 나타남, 각 버튼 클릭시 해당 화면으로 이동)
 <br><br>
-<img src="images/first_select.png" width="400"></a>
+<img src="images/first_select.png" width="400">
 
-### 두번째 화면(장바구니 화면)
+### 두번째 화면(장바구니 페이지)
 
-1.
+1. 장바구니에 아무것도 담겨 있지 않을때
+<br><br>
+<img src="images/second_none.png" width="400">
 
+1. 장바구니에 아이템이 추가되었을때 (선택하지 않으면 '구매하기' 버튼은 비활성화, '홈으로' 버튼 정상적으로 작동)
+<br><br>
+<img src="images/second_item.png" width="400">
+
+1. 여러 품목들을 동시에 선택하였을때 (구매하기 버튼 활성화)
+<br><br>
+<img src="images/second_select.png" width="400">
+
+### 세번째 화면(구매 페이지)
+
+1. <b>단일</b> 품목을 선택한후 '구매하기' 진행했을때
+<br><br>
+<img src="images/third_one.png" width="400">
+
+1. <b>여러</b> 품목을 선택한후 '구매하기' 진행했을때
+<br><br>
+<img src="images/third_multi.png" width="400">
+
+1. 주소, 연락처 정보를 채우면 버튼 활성화
+<br><br>
+<img src="images/third_filled.png" width="400">
+
+1. 구매 완료 하면 홈으로 이동후 Toast 안내
+<br><br>
+<img src="images/third_done.png" width="400">
+
+## 추가 구현 내용
+
+1. 실시간 품목 정보 변경 가능<br>
+<b>Firebase Realtime Database</b> 활용 하여 앱에 상품정보 실시간 반영됨<br><br>
+<img src="images/firebase.gif" width="400">
+
+1. 장바구니 품목 유지<br>
+<b>Realm local DB</b>를 활용해 앱을 종료해도 장바구니 아이템이 사라지지 않고 계속 유지됨<br><br>
+<img src="images/realm.gif" width="400">
