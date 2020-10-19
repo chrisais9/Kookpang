@@ -100,6 +100,8 @@ class ShoppingListFragment
 
     private fun initButtons() {
         btn_buy.setOnClickListener {
+            // 화면은 홈으로 초기화 시켜놓고
+            (activity as MainActivity).vp_mode.setCurrentItem(0, true)
             startActivity(
                 Intent(requireContext(), PurchaseActivity::class.java)
                     .putExtra("name", ArrayList(selectedProduct.map { it.name }))
@@ -108,6 +110,7 @@ class ShoppingListFragment
         }
 
         btn_home.setOnClickListener {
+            // 홈으로 이동
             (activity as MainActivity).vp_mode.setCurrentItem(0, true)
         }
     }

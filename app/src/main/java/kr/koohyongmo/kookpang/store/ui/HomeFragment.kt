@@ -58,7 +58,7 @@ class HomeFragment
     }
 
     private fun initProductItems() {
-        Firebase.database.reference
+        Firebase.database.getReferenceFromUrl("https://kookpang-853e8.firebaseio.com/")
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     productListData.clear()
