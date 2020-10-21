@@ -4,6 +4,8 @@
 <h4 align="center">국민대 X Coupang</h4>
 <h5 align="center">학교 과제를 위해 제작된 앱임을 알립니다</h5>
 
+[![HitCount](http://hits.dwyl.com/chrisais9/chrisais9/Kookpang.svg)](http://hits.dwyl.com/chrisais9/chrisais9/Kookpang)
+
 ## 과제 개요
 1. 평가 : 첫번째 화면 5점, 두번째 화면 5점, 세번째 화면 5점
           (만점 15점, 각 화면의 구성+동작으로 평가)
